@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!-- saved from url=(0147)https://d2l.deakin.edu.au/content/enforced/1031649-SIT209_TRI-2_2021/topic2.html?d2lSessionVal=DfGwQdAhI9AquNFFXTm3pmD03&ou=1031649&d2l_body_type=3 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>topic2.md</title>
+
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="./mermaid.min.js"></script>
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/1031649/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="./MathML.js"></script><script>document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2cSafe','130',true); });</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+<body style="overflow-y: hidden;">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="sit209-software-engineering-2-developing-iot-applications">SIT209 Software Engineering 2: Developing IoT Applications</h1>
+<h2 id="topic-2-iot-data-presentation">Topic 2: IoT data presentation</h2>
+<h3 id="overview-of-the-task">Overview of the task</h3>
+<p>In this task you will develop the frontend webapp that will allow you to display IoT-like data.</p>
+<p>This task will cover the following:</p>
+<ul>
+<li>Webapp development with HTML and Javascript</li>
+<li>Bootstrap for basic element styling</li>
+<li>JSON data structures for dynamic data</li>
+<li>localStorage for persistence across pages</li>
+</ul>
+<h3 id="submission-details">Submission Details</h3>
+<p>You will include evidence that you have completed this activity as part of the topic 2 assessment. You should include captioned screenshots of the following.</p>
+<ul>
+<li>device-list.html</li>
+<li>register-device.html</li>
+<li>app.js</li>
+<li>Screenshot of the webapp running in a browser</li>
+</ul>
+<h3 id="instructions">Instructions</h3>
+<ol>
+<li>
+<p>Create a new folder <code>topic2</code>.</p>
+</li>
+<li>
+<p>In this folder, create a new file named <code>device-list.html</code> containing the following template content.</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"A web page about IoT Applications"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ENTER YOUR NAME HERE"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>IoT Applications<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>IoT Devices<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Bootstrap is a framework for building fast, responsive web sites.  To use bootstrap we need to just include the bootstrap libraries.</p>
+<p>Go to <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a> and scroll down to the 'jsDeliver' section. These are the libraries we need to include in our html files.</p>
+<p>Include the Bootstrap css library (from the getbookstrap URL above) as a <code>link</code> element in the <code>head</code> section of <code>device-list.html</code>.  The exact code depends on the version of bootstrap you use.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"</span> /&gt;</span>
+</div></code></pre>
+<p>This includes some nice defaults for styling elements that we will use throughout the unit.</p>
+</li>
+<li>
+<p>Include the Bootstrap js file (from the getbookstrap URL above) as a <code>script</code> element at the end of the <code>body</code> section.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+<p><code>script</code> elements are always included at the end of the <code>body</code> section. This decreases the perceived loading time for the user as they see the HTML elements appear in the browser before the Javascript is loaded.  It is often important that they are after html elements are declared as scripts often manipulate these elements.</p>
+</li>
+<li>
+<p>We should also include the jQuery library for some convenience functions. The latest jQuery library can be found on the CDN <a href="https://code.jquery.com/" target="_blank">https://getbootstrap.com/</a>. You want the latest minified version.</p>
+<p>Include the following <code>script</code> elements immediately before the <code>bootstrap</code> script.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.6.0.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Add a <code>h1</code> element at the start of the <code>body</code> section with <code>Devices</code> as the content.</p>
+</li>
+<li>
+<p>Add a <code>table</code> element with the following structure.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"devices"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>User<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Device<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Load the <code>device-list.html</code> file in a browser.</p>
+<p>There isn't anything too exciting happening here. We need some data to populate the table.</p>
+</li>
+<li>
+<p>Create a new Javascript file called <code>app.js</code> and include it at a <code>script</code> element in <code>device-list.html</code>.</p>
+<p>We will be using some jQuery functions later in the project so make sure the <code>script</code> element is declared after the jQuery library.</p>
+</li>
+<li>
+<p>In <code>app.js</code> declare a new <code>Array</code> named devices and <code>push</code> (or add) three new devices.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> devices = [];
+
+devices.push({ <span class="hljs-attr">user</span>: <span class="hljs-string">"Mary"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Mary's iPhone"</span> });
+devices.push({ <span class="hljs-attr">user</span>: <span class="hljs-string">"Alex"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Alex's Surface Pro"</span> });
+devices.push({ <span class="hljs-attr">user</span>: <span class="hljs-string">"Mary"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Mary's MacBook"</span> });
+</div></code></pre>
+<p>A JSON object is a data structure that stores data using a key value pair.</p>
+</li>
+<li>
+<p>Save the file and refresh the browser. Nothing happens because we aren't doing anything with the devices yet.</p>
+</li>
+<li>
+<p>Open up the browser's console - in Chrome this is under View &gt; Developer &gt; Javascript Console.</p>
+<p>It is a good idea to always have the console open when working with Javascript, as when something crashes there is usually no visual cue on the webpage. The console should show an error if something has gone wrong and sometimes even contains helpful hints as the where it may have occurred.</p>
+</li>
+<li>
+<p>In the console tab, click to the right of the <code>&gt;</code> symbol to place the cursor, type <code>devices</code> and press <code>enter</code>.</p>
+<p>This should display the devices array as a collapsed summary. Clicking the triangles allows you to expand the information displayed and get a better look at what is actually stored in the data structure.</p>
+<p>Expanding the <code>__proto__</code> summary on the array will reveal all the methods that can be invoked on this type of data structure.</p>
+<p>Note that when expanding the <code>__proto__</code> summary on any of the <code>Object</code> variables reveals a different set of methods to the <code>Array</code>. The <code>Array</code> methods contain functionality that is specific to iterating over a collection - such as <code>forEach</code> and <code>map</code> that do not make sense in the context of single <code>Object</code> data types, therefore they do not exist on the prototype for <code>Object</code>.</p>
+<p>You may have noticed that we never actually declared a datatype for the devices array or any of the device objects in our code,but Javascript was able to work out the type from the context - what we were trying to assign to it. This is called <code>type inference</code> and is one of the most wonderful and awful things about working with Javascript, depending on the situation you're in.</p>
+</li>
+<li>
+<p>Still in app.js, use the <code>forEach</code> method on the <code>Array</code> to iterate over the collection and create a new row in the <code>table</code> for each <code>Object</code>. The <code>forEach</code> method takes a function as a parameter, which it runs on each element of the collection.</p>
+<pre class="hljs"><code><div>devices.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">device</span>) </span>{
+  <span class="hljs-keyword">const</span> table = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#devices'</span>);
+  <span class="hljs-keyword">const</span> row = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'tr'</span>);
+
+  <span class="hljs-keyword">const</span> user = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'td'</span>);
+  <span class="hljs-keyword">const</span> userText = <span class="hljs-built_in">document</span>.createTextNode(device.user);
+  user.appendChild(userText);
+
+  <span class="hljs-keyword">const</span> name = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'td'</span>);
+  <span class="hljs-keyword">const</span> nameText = <span class="hljs-built_in">document</span>.createTextNode(device.name);
+  name.appendChild(nameText);
+
+  row.appendChild(user);
+  row.appendChild(name);
+
+  table.appendChild(row);
+});
+</div></code></pre>
+<p>This is quite verbose for the simple task it is performing. This is one of the issues with using raw Javascript for DOM manipulation. We have already included jQuery for Bootstrap so what would it look like using that?</p>
+<pre class="hljs"><code><div>devices.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">device</span>) </span>{
+  $(<span class="hljs-string">'#devices tbody'</span>).append(<span class="hljs-string">`
+    &lt;tr&gt;
+      &lt;td&gt;<span class="hljs-subst">${device.user}</span>&lt;/td&gt;
+      &lt;td&gt;<span class="hljs-subst">${device.name}</span>&lt;/td&gt;
+    &lt;/tr&gt;`</span>
+  );
+});
+</div></code></pre>
+<p>As you can see the jQuery syntax is a lot nicer to work with for DOM manipulation. Not only are there less lines of code, it is also much easier to read and understand.</p>
+<p>This example uses backticks <code>`</code> to perform <code>string interpolation</code>. String interpolation allows the value of a variable to be evaluated and substituted into a string, without requiring manual concatenation. It also makes it possible to write the above code on separate lines with the correct indentation, making it much more readable.</p>
+<p>You can use this code instead of the previous code.  Just keep the first for lines from above declaring the array and filling it for now.</p>
+<p>The webpage still doesn't looks great. Let's add some Bootstrap classes to make it looks a little nicer.</p>
+</li>
+<li>
+<p>Add a <code>div</code> with the class of <code>container</code> that wraps everything in the body, excluding the <code>script</code> elements, and add the <code>table</code> class to the <code>table</code> element.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Devices<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"devices"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>User<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Device<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<p>That looks much nicer! You can see in the browser that Bootstrap has applied a new font, set font sizes, added some margin and a little padding. This is just a quick example of how Bootstrap can be used to provide some basic styling for elements to speed up the development of user interfaces.</p>
+<p>For more examples check out the components page on the <a href="https://getbootstrap.com/docs/4.0/components" target="_blank">bootstrap documentation</a> and <a href="https://www.w3schools.com/bootstrap4/default.asp" target="_blank">W3C Bootstrap tutorials</a>.</p>
+</li>
+<li>
+<p>Now lets add the ability to register a new device.</p>
+</li>
+<li>
+<p>Create a new HTML named <code>register-device.html</code> and copy the contents of the <code>device-list.html</code> file.</p>
+</li>
+<li>
+<p>Delete the <code>table</code> element and all of its children.</p>
+</li>
+<li>
+<p>Change the <code>h1</code> element's content to <code>Register New Device</code>.</p>
+</li>
+<li>
+<p>Add two text inputs and a button to save our new device, within our main body div.</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"user"</span>&gt;</span>User<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"user"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"name"</span>&gt;</span>Device Name<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-success"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"add-device"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>By adding some Bootstrap classes - <code>form-group</code>, <code>form-control</code> and <code>btn btn-success</code> - we can make our form look a little nicer.  Test the page in your web browser.</p>
+<p>Clicking the button doesn't actually do anything. Let's add some javascript to react to let the user know we are paying attention.</p>
+</li>
+<li>
+<p>Open the <code>app.js</code> file and add a <code>listener</code> for the <code>click</code> event. This function takes another function as a parameter. This is where we can react to the user's input - in this case, add the device to the list of devices.</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#add-device'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> user = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#user'</span>).value;
+  <span class="hljs-keyword">const</span> name = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#name'</span>).value;
+  devices.push({ <span class="hljs-attr">user</span>: user, <span class="hljs-attr">name</span>: name });
+  <span class="hljs-built_in">console</span>.log(devices);
+});
+</div></code></pre>
+<p>Again, that syntax might be a little too wordy. Let's use jQuery again.</p>
+<pre class="hljs"><code><div>$(<span class="hljs-string">'#add-device'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> user = $(<span class="hljs-string">'#user'</span>).val();
+  <span class="hljs-keyword">const</span> name = $(<span class="hljs-string">'#name'</span>).val();
+  devices.push({ <span class="hljs-attr">user</span>: user, <span class="hljs-attr">name</span>: name });
+  <span class="hljs-built_in">console</span>.log(devices);
+});
+</div></code></pre>
+<p>Much clearer, but we could still do better by using ES6's object property shorthand.</p>
+<pre class="hljs"><code><div>$(<span class="hljs-string">'#add-device'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> user = $(<span class="hljs-string">'#user'</span>).val();
+  <span class="hljs-keyword">const</span> name = $(<span class="hljs-string">'#name'</span>).val();
+  devices.push({ user, name });
+  <span class="hljs-built_in">console</span>.log(devices);
+});
+</div></code></pre>
+<p>Anytime the variable identifer is the same as the key for the object, this style of shorthand can be used to only need to specify it once.</p>
+<p>Use whichever one of the above 3 options your comfortable with.</p>
+<p>Load register-device.html, open the Javascript console and type 'devices', it should show 3 devices in the array.  Now enter data for the 2 form elements in the page and click save.  It will now print the array showing that it has added a fourth device to the array.</p>
+<p>Great! Our register device page is now adding a new record, which we can see in the console. Let's instead change the location of the page to <code>device-list.html</code>, so we can view our new list of devices in the table.</p>
+</li>
+<li>
+<p>Change the console.log(devices) in the javascript statement to a location.href.</p>
+<pre class="hljs"><code><div>location.href = <span class="hljs-string">'device-list.html'</span>;
+</div></code></pre>
+</li>
+<li>
+<p>Reload the page in the browser, input the user and device name and click save.</p>
+<p>Where is our new device?</p>
+<p>The problem is when we load the <code>device-list.html</code> file in the browser, everything we declared in the <code>app.js</code> file is forgotten by the browser. <code>device-list.html</code> includes the <code>app.js</code> script, which gets executed again from the top of the file, declaring a new devices array and pushing in the default three values.</p>
+<p>We need some way to persist this data across multiple pages. Thankfully the browser has a small block of storage that can be used for this called <code>localStorage</code>. Let's change the <code>app.js</code> file so that it loads the devices from <code>localStorage</code>.</p>
+</li>
+<li>
+<p>Replace the top four statements in <code>app.js</code> that declare the devices array and push in three objects with the following code.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> devices = localStorage.getItem(<span class="hljs-string">'devices'</span>);
+</div></code></pre>
+<p>Refreshing the browser should display an error in the console. This is because the <code>devices</code> item does not yet exist in local storage. Therefore, the statement returns undefined, which does not have a method called <code>forEach</code>.</p>
+</li>
+<li>
+<p>Add the logical <code>or</code> operator to the end of the statement and the declaration for an empty array.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> devices = localStorage.getItem(<span class="hljs-string">'devices'</span>) || [];
+</div></code></pre>
+<p>This may look a little strange, but what we are doing is declaring a new variable named devices. We then need to evaluate the expression on the right of the assignment operator <code>=</code> to work out which value should be written to devices. The localStorage method <code>getItem</code> is called and returns <code>undefined</code>. This is considered a "falsey" value in Javascript, so it evaluates the right-hand side of the or operator <code>||</code> which is an empty array. This is a "truthy" value, so it is assigned to devices. To read more about truthy and falsey values, check out this <a href="https://codeburst.io/javascript-truthy-values-dont-always-equal-true-8afaf071a4a6" target="_blank">article</a></p>
+<p>Lastly, localStorage is not able to store JSON objects or arrays, but it can store strings. Conveniently, the <code>JSON</code> class contains methods to <code>stringify</code> a JSON object - turn it into one long string - and <code>parse</code> a stringified object into a JSON object.</p>
+</li>
+<li>
+<p>Wrap the previous statement in a parse method to convert the string into an array of JSON objects.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> devices = <span class="hljs-built_in">JSON</span>.parse(localStorage.getItem(<span class="hljs-string">'devices'</span>)) || [];
+</div></code></pre>
+<p>Now let's implement the ability to write to the localStorage from the <code>register-device.html</code> page.</p>
+</li>
+<li>
+<p>Open <code>app.js</code> and add the following line in between pushing the new object into the array and changing the location of the page to <code>device-list.html</code>.</p>
+<pre class="hljs"><code><div>localStorage.setItem(<span class="hljs-string">'devices'</span>, <span class="hljs-built_in">JSON</span>.stringify(devices));
+</div></code></pre>
+<p>This will add or update the localStorage value for <code>devices</code> with a string-version of the devices array.</p>
+</li>
+<li>
+<p>Refresh the <code>register-device.html</code> page in the browser and fill out the form with a new user and device name, and click save.</p>
+<p>You should see the new device in the devices list in <code>device-list.html</code>. To view the localStorage values, open the <code>Application</code> tab of the Chrome developer tools. There will be a list of different types of storage on the left. Expanding Local Storage and clicking <code>file://</code> will show any variables we have stored in localStorage.</p>
+</li>
+<li>
+<p>You can now create web pages that you can use to update and display data. In the future we will use databases, but the display mechanism of using a table and javascript will be similar.</p>
+</li>
+<li>
+<p>Follow the instructions for the topic assessment. For this practical exercise, take screenshots and add a short captions for each screenshots.</p>
+</li>
+</ol>
+
+
+
+</body></html>
